@@ -1,44 +1,35 @@
 # my-first-project
+
 # PyChronicle – Week 1 Progress
 
 ## Overview
 
-PyChronicle is an AST-Powered Time-Travel Debugger designed to record and visualize the historical state of Python programs. The goal is to allow developers to move backward and forward through program execution without re-running the application.
-
+PyChronicle is a tool that helps developers see how their Python programs worked in the past. It. Shows the history of what the program did. This way developers can move back and forth through the programs steps without having to run it
 ## Week 1 Objectives
-
-* Learn and explore Python's Abstract Syntax Tree (AST) module.
-* Parse Python source files and analyze their structure.
-* Detect and extract variable assignments from Python code.
-* Design a storage system for execution data using SQLite.
-* Build the foundation for future execution tracing and time-travel debugging.
-
+* Learn about Pythons Abstract Syntax Tree (AST) module.
+* Read Python code. Understand its structure.
+*. Extract where variables are assigned in the code.
+* Design a system to store data about the programs execution using SQLite.
+* Build the basics for tracing and debugging.
 ## Work Completed
-
-* Implemented an AST parser capable of reading and analyzing Python source files.
-* Developed a custom `NodeVisitor` to identify variable assignments and their corresponding line numbers.
-* Created an SQLite database schema to store execution-related information, including timestamps, line numbers, variable names, and values.
-* Successfully connected the AST analysis module with the SQLite storage layer.
-* Tested the parser using sample Python programs and verified correct extraction of variables and line information.
-
+* I made a tool that can read and analyze Python code.
+* I created a custom way to find where variables are assigned and what line of code they're on.
+* I set up an SQLite database to store information about the programs execution like timestamps and variable values.
+* I connected the code analysis tool to the SQLite database.
+* I tested the tool with some sample Python programs. It worked.
 ## Technologies Used
-
 * Python
 * AST (Abstract Syntax Tree)
 * SQLite3
-
 ## Key Learning Outcomes
-
-* Understanding Python code representation through AST nodes.
-* Working with the `ast.NodeVisitor` class for code analysis.
-* Designing and managing SQLite databases programmatically.
-* Building modular components for developer tooling and metaprogramming projects.
-
+* I learned how Python code is represented as a tree of nodes.
+* I figured out how to use a class to analyze code.
+* I learned how to design and manage SQLite databases.
+* I built some components for developer tools.
 ## Next Steps (Week 2)
+* I will track what happens when the program runs using a function.
+* I will capture changes to values during execution.
+* I will store the execution history in SQLite.
+* I will start building a text-based interface.
 
-* Implement runtime execution tracing using `sys.settrace()`.
-* Capture variable state changes during program execution.
-* Store execution traces in SQLite for historical inspection.
-* Begin development of the Terminal User Interface (TUI) using Textual.
-
-This week established the core static-analysis and storage infrastructure required for PyChronicle's time-travel debugging system.
+This week I set up the core system, for PyChronicles time-travel debugging tool.
