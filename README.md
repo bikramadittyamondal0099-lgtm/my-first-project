@@ -1,5 +1,5 @@
 # my-first-project
-# PyChronicle – Week 1 Progress Report
+# PyChronicle – Week 1 Progress
 
 ## Overview
 
