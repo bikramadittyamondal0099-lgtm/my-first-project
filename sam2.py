@@ -52,7 +52,6 @@ class VariableTracker(ast.NodeVisitor):
 
         self.generic_visit(node)
 
-# Run visitor
 tracker = VariableTracker()
 tracker.visit(tree)
 
