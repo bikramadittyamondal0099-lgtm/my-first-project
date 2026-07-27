@@ -3,9 +3,6 @@ from tracer import run
 from database import clear, show_records
 TARGET_FILE = "test sample.py"
 def main():
-    print("=" * 50)
-    print("        PYCHRONICLE")
-    print("=" * 50)
     clear()
 
     print("\nReading Python File\n")
