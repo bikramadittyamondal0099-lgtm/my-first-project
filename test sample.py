@@ -1,5 +1,6 @@
 x = 10
 y = 20
 z = x + y
-
-name = "PyChronicle"
+name="bikram"
+age= 19
+name2 = "PyChronicle"
