@@ -1,35 +1,69 @@
 # my-first-project
-
-# PyChronicle – Week 1 Progress
-
+# PyChronicle – Week 2 Progress
 ## Overview
-
-PyChronicle is a tool that helps developers see how their Python programs worked in the past. It. Shows the history of what the program did. This way developers can move back and forth through the programs steps without having to run it
-## Week 1 Objectives
-* Learn about Pythons Abstract Syntax Tree (AST) module.
-* Read Python code. Understand its structure.
-*. Extract where variables are assigned in the code.
-* Design a system to store data about the programs execution using SQLite.
-* Build the basics for tracing and debugging.
+During Week 2, the focus shifted from analyzing Python source code to tracking its execution in real time. The goal was to build the core tracing engine that records how a program executes, captures variable changes, and stores execution history in an SQLite database. This forms the foundation of PyChronicle's time-travel debugging system.
+## Week 2 Objectives
+* Learn how Python's `sys.settrace()` function works.
+* Monitor program execution line by line.
+* Capture the current values of variables while the program runs.
+* Store execution history in an SQLite database.
+* Build the initial structure of a terminal-based interface.
 ## Work Completed
-* I made a tool that can read and analyze Python code.
-* I created a custom way to find where variables are assigned and what line of code they're on.
-* I set up an SQLite database to store information about the programs execution like timestamps and variable values.
-* I connected the code analysis tool to the SQLite database.
-* I tested the tool with some sample Python programs. It worked.
+* I implemented a tracing system using Python's `sys.settrace()`.
+* I tracked program execution line by line during runtime.
+* I captured local variable values as they changed.
+* I connected the tracer to the SQLite database and stored execution records.
+* I tested the tracer with sample programs containing loops and variable updates.
+* I created the basic structure for the terminal user interface using Textual.
 ## Technologies Used
 * Python
-* AST (Abstract Syntax Tree)
+* sys.settrace()
 * SQLite3
+* Textual
 ## Key Learning Outcomes
-* I learned how Python code is represented as a tree of nodes.
-* I figured out how to use a class to analyze code.
-* I learned how to design and manage SQLite databases.
-* I built some components for developer tools.
-## Next Steps (Week 2)
-* I will track what happens when the program runs using a function.
-* I will capture changes to values during execution.
-* I will store the execution history in SQLite.
-* I will start building a text-based interface.
+* I learned how Python tracing works internally.
+* I understood how to access execution frames and local variables.
+* I learned how runtime information can be captured without modifying the original source code.
+* I gained experience storing execution history efficiently in a database.
+* I built the foundation of a runtime execution tracer.
+## Next Steps (Week 3)
+* Implement delta compression to store only variable changes.
+* Reduce database size by avoiding duplicate execution states.
+* Connect the execution history with the Textual interface.
+* Build a timeline slider to navigate through previous execution states.
+* Highlight the corresponding source code line while moving through history.
+This week I successfully built the runtime tracing engine of PyChronicle, allowing the project to record program execution history and preparing the foundation for the time-travel debugging interface.
 
-This week I set up the core system, for PyChronicles time-travel debugging tool.
+# PyChronicle – Week 3 Progress (Ongoing)
+## Overview
+During Week 3, the primary goal is to transform PyChronicle from a runtime tracer into a true time-travel debugger. The focus is on optimizing data storage, improving performance, and creating an interactive interface that allows developers to move backward and forward through a program's execution history.
+## Week 3 Objectives
+* Implement delta compression for execution history.
+* Store only changed variable values instead of complete program states.
+* Connect the SQLite database with the Textual interface.
+* Develop a timeline slider for navigating execution history.
+* Highlight the executed source code line while scrubbing through time.
+## Current Work
+* Developing the delta compression system.
+* Optimizing SQLite queries for faster retrieval.
+* Connecting execution records with the terminal interface.
+* Designing the timeline navigation system.
+* Improving overall performance and reducing memory usage.
+## Technologies Used
+* Python
+* SQLite3
+* Textual
+* sys.settrace()
+## Expected Learning Outcomes
+* Understand efficient state management.
+* Learn delta-based storage techniques.
+* Improve database optimization skills.
+* Build interactive terminal applications using Textual.
+* Gain deeper knowledge of Python metaprogramming.
+## Next Steps (Week 4)
+* Package PyChronicle as a command-line application.
+* Add watch variables for tracking selected values.
+* Improve the user interface and overall experience.
+* Prepare the project for final testing and documentation.
+
+Week 3 is currently focused on optimizing performance and building the interactive time-travel interface that will allow developers to inspect historical program states efficiently.
