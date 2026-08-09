@@ -1,69 +1,78 @@
-# my-first-project
-# PyChronicle – Week 2 Progress
+# PyChronicle – Week 4 Progress
+
 ## Overview
-During Week 2, the focus shifted from analyzing Python source code to tracking its execution in real time. The goal was to build the core tracing engine that records how a program executes, captures variable changes, and stores execution history in an SQLite database. This forms the foundation of PyChronicle's time-travel debugging system.
-## Week 2 Objectives
-* Learn how Python's `sys.settrace()` function works.
-* Monitor program execution line by line.
-* Capture the current values of variables while the program runs.
-* Store execution history in an SQLite database.
-* Build the initial structure of a terminal-based interface.
+
+During Week 4, the focus shifted toward making PyChronicle a more complete and usable debugging application. The main objective was to connect the core components developed during the previous weeks and prepare the project for practical use as a command-line and graphical debugging tool.
+
+The work focused on improving the execution workflow, adding watch variables, strengthening the timeline-based debugging system, improving the user interface, and preparing the project for packaging and distribution.
+
+## Week 4 Objectives
+
+- Convert the core PyChronicle functionality into a usable command-line application.
+- Implement watch variables for monitoring selected variables.
+- Improve the timeline-based execution history.
+- Display historical variable states clearly.
+- Improve the graphical user interface.
+- Connect the parser, tracer, database, and interface into one workflow.
+- Prepare the application for Windows packaging.
+- Perform final testing of the integrated system.
+
 ## Work Completed
-* I implemented a tracing system using Python's `sys.settrace()`.
-* I tracked program execution line by line during runtime.
-* I captured local variable values as they changed.
-* I connected the tracer to the SQLite database and stored execution records.
-* I tested the tracer with sample programs containing loops and variable updates.
-* I created the basic structure for the terminal user interface using Textual.
+
+- I implemented the command-line interface for running Python files through PyChronicle.
+- I connected the parser, tracer, and SQLite database into a unified execution workflow.
+- I implemented variable change tracking using delta-based execution records.
+- I added a timeline system for navigating through recorded execution frames.
+- I implemented watch variables for monitoring individual variables during execution.
+- I added variable history to display how selected variables changed over time.
+- I improved the graphical interface and organized the source code, variable state, timeline, and execution history into separate sections.
+- I added source-line highlighting to identify the corresponding line of execution while navigating through the timeline.
+- I improved the database structure for storing variable changes efficiently.
+- I prepared the project for packaging as a standalone Windows application using PyInstaller.
+- I created the initial installer configuration for distributing PyChronicle as a desktop application.
+
 ## Technologies Used
-* Python
-* sys.settrace()
-* SQLite3
-* Textual
+
+- Python
+- Tkinter
+- SQLite3
+- Abstract Syntax Tree (`ast`)
+- `sys.settrace()`
+- Typer
+- PyInstaller
+- Inno Setup
+
 ## Key Learning Outcomes
-* I learned how Python tracing works internally.
-* I understood how to access execution frames and local variables.
-* I learned how runtime information can be captured without modifying the original source code.
-* I gained experience storing execution history efficiently in a database.
-* I built the foundation of a runtime execution tracer.
-## Next Steps (Week 3)
-* Implement delta compression to store only variable changes.
-* Reduce database size by avoiding duplicate execution states.
-* Connect the execution history with the Textual interface.
-* Build a timeline slider to navigate through previous execution states.
-* Highlight the corresponding source code line while moving through history.
-This week I successfully built the runtime tracing engine of PyChronicle, allowing the project to record program execution history and preparing the foundation for the time-travel debugging interface.
 
-# PyChronicle – Week 3 Progress (Ongoing)
-## Overview
-During Week 3, the primary goal is to transform PyChronicle from a runtime tracer into a true time-travel debugger. The focus is on optimizing data storage, improving performance, and creating an interactive interface that allows developers to move backward and forward through a program's execution history.
-## Week 3 Objectives
-* Implement delta compression for execution history.
-* Store only changed variable values instead of complete program states.
-* Connect the SQLite database with the Textual interface.
-* Develop a timeline slider for navigating execution history.
-* Highlight the executed source code line while scrubbing through time.
-## Current Work
-* Developing the delta compression system.
-* Optimizing SQLite queries for faster retrieval.
-* Connecting execution records with the terminal interface.
-* Designing the timeline navigation system.
-* Improving overall performance and reducing memory usage.
-## Technologies Used
-* Python
-* SQLite3
-* Textual
-* sys.settrace()
-## Expected Learning Outcomes
-* Understand efficient state management.
-* Learn delta-based storage techniques.
-* Improve database optimization skills.
-* Build interactive terminal applications using Textual.
-* Gain deeper knowledge of Python metaprogramming.
-## Next Steps (Week 4)
-* Package PyChronicle as a command-line application.
-* Add watch variables for tracking selected values.
-* Improve the user interface and overall experience.
-* Prepare the project for final testing and documentation.
+- I learned how to integrate multiple Python modules into a complete application.
+- I gained experience building a command-line interface for a Python project.
+- I learned how watch variables can be used to monitor specific values during program execution.
+- I understood how timeline-based state reconstruction can be implemented using stored variable changes.
+- I improved my understanding of SQLite-based execution history management.
+- I gained practical experience packaging Python applications into standalone Windows executables.
+- I learned how different components such as parsing, tracing, database storage, and user interfaces work together in a software project.
 
-Week 3 is currently focused on optimizing performance and building the interactive time-travel interface that will allow developers to inspect historical program states efficiently.
+## Project Integration
+
+By the end of Week 4, the major components of PyChronicle were connected into a single workflow:
+
+```text
+Python Source Code
+        |
+        v
+     Parser
+        |
+        v
+   Execution Tracer
+        |
+        v
+ Variable Change Detection
+        |
+        v
+    SQLite Database
+        |
+        v
+ Timeline and State Reconstruction
+        |
+        v
+ Graphical / Command-Line Interface
